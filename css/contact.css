@@ -1,0 +1,27 @@
+form>.content{
+    display:grid; 
+    width: 610px; 
+    grid-template-columns: 100px 500px; gap:10px; 
+    margin-inline:auto;
+    margin-top:20px
+}
+
+input, textarea{
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 6px;
+    color:black;
+}
+
+label{
+    padding: 10px;
+}
+input[type=submit]{
+    width: 100px;
+    height: 2em;
+    color: var(--color);
+    background-color: var(--bgcolor);
+    box-shadow: 1px 1px 3px;
+    font-size: 1.1em;
+    padding: 0;
+}

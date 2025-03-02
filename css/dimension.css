@@ -1,0 +1,61 @@
+@media (max-width:480px) /* smartphones, iPhone, portrait 480x320 phones */
+{ 
+
+}
+@media (max-width:640px) /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+{ 
+    .container{
+        width: 480px;
+    }
+    .nav>ul{
+        position: absolute;
+        display: none;
+        top: 60px;
+        left: 10px;
+        padding-inline: 1em;
+        box-shadow: 1px 1px 3px gray;
+        z-index: 1;
+    }
+    .nav>ul>li{
+        margin-block: 1em;
+    }
+    .nav>.menu-icon{
+        display: block;
+    }
+    .nav>.menu-icon:focus~ul{
+        display: block;
+    }
+}
+@media (min-width:641px) /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+{
+    .container{
+        width: 640px;
+    }
+    .nav>.menu-icon{
+        display: none;
+    }
+    .nav>ul{
+        position: relative;
+        display: flex;
+        top: 0px;
+        left: 0px;
+    }
+}
+@media (min-width:961px) /* tablet, landscape iPad, lo-res laptops ands desktops */
+{
+    .container{
+        width: 960px;
+    }
+
+    
+}
+@media (min-width:1025px) /* big landscape tablets, laptops, and desktops */
+{
+
+}
+@media (min-width:1281px) /* hi-res laptops and desktops */
+{
+    .container{
+        width: 1280px;
+    }
+}

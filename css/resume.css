@@ -1,0 +1,95 @@
+h2{
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.resume-grid{
+    display: grid;
+    grid-template-columns: 3em auto;
+    margin-left: 20px;
+    margin-top: 30px;
+    gap:0;
+}
+
+.resume-grid .first{
+    height: 100%;
+    position: relative;
+}
+
+.resume-grid .first::before{
+    position:absolute;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: orange;
+    left: 4px;
+    top: 10px;
+}
+
+.resume-grid .first::after{
+    position:absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    filter: blur(1px);
+    border-radius: 50%;
+    border: solid 5px var(--maincolor);
+    top: 10px;
+}
+
+.resume-grid .first:nth-child(1)::after{
+    content: "";
+    position: absolute;
+    background-color: var(--maincolor);
+    background-image: url("/images/book.svg");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 3em;
+    height: 3em;
+    box-shadow: inset 1px 1px var(--bordercolor);
+    margin-left: -1.5em;
+    margin-top: -0.2em;
+}
+
+.resume-grid .first:nth-last-child(2) {
+    border: none;
+}
+
+.education-card{
+    margin-bottom: 20px;
+}
+
+.card-title{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.card-date{
+    font-size: 1.1em;
+    color:burlywood;
+}
+
+.skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    border-radius: 20px;
+    box-shadow: inset 2px 1px 2px var(--bordercolor);
+    padding: 30px;
+}
+
+.skill{
+    width: 100%;
+    background-color: var(--menucolor);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.skill div{
+    height: 10px;
+    background-color: rgb(216, 141, 0);
+}

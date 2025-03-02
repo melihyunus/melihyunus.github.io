@@ -1,0 +1,54 @@
+.content{
+    display:grid; 
+    grid-template-columns: 3fr 2fr; 
+    border-radius: 10px; 
+    margin-inline: auto;
+}
+
+.me{
+    display: flex;
+    align-items: center;
+    width: 8.8em;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: gainsboro;
+    border-radius: 5px;
+    margin-top: 2.5em;
+    padding-inline: 10px;
+    font-family: Arial;
+}
+
+.me>div{
+    font-weight: bolder;
+    font-size: 1.4em;
+    color: var(--color);
+    transform: rotateZ(90deg);
+    margin-left: 15px;
+}
+
+.title{
+    font-size: 2em;
+    color:gainsboro;
+    margin-top: 1em;
+    font-family: "Arial";
+}
+
+.title>span{
+    color:var(--color);
+}
+
+.note{
+    color:gray;
+    font-size: 1em;
+    margin-top: 3em;
+}
+
+.back-img{
+    background-image: url("../images/me/bilgibasindacut.png");
+    background-size: 80%;
+    aspect-ratio: 5/4;
+    background-position: top right;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    margin-right: 20px;
+}
