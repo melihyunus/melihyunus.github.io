@@ -4,7 +4,7 @@
 
 .cube-container{
     position: relative;
-    width: 200px;
+    width: fit-content;
     margin-inline: auto;
     z-index: 2;
 }
@@ -107,7 +107,7 @@ transform: translateZ(calc(var(--cube-lenght) * 1.5));
     
     .cube-container{
         position: relative;
-        width: 400px;
+        width: fit-content;
         margin-inline: auto;
         z-index: 2;
     }
