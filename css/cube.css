@@ -1,10 +1,10 @@
 :root{
-    --cube-lenght: 100px;
+    --cube-lenght: 50px;
 }
 
 .cube-container{
     position: relative;
-    width: 400px;
+    width: 200px;
     margin-inline: auto;
     z-index: 2;
 }
@@ -102,12 +102,12 @@ transform: translateZ(calc(var(--cube-lenght) * 1.5));
 @media (min-width:1024px) /* tablet, landscape iPad, lo-res laptops ands desktops */
 {
     :root{
-        --cube-lenght: 50px;
+        --cube-lenght: 100px;
     }
     
     .cube-container{
         position: relative;
-        width: 200px;
+        width: 400px;
         margin-inline: auto;
         z-index: 2;
     }
