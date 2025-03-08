@@ -11,13 +11,13 @@
 
 .parameters{
     display:grid; 
-    grid-template-columns: repeat(4, 75px); 
-    column-gap: 25px; 
+    grid-template-columns: repeat(4, 60px); 
+    column-gap: 15px; 
     margin-inline: auto;
 }
 
 .parameters input{
-    width: 75px;
+    width: 60px;
 }
 
 .move{
@@ -110,5 +110,16 @@ transform: translateZ(calc(var(--cube-lenght) * 1.5));
         width: 400px;
         margin-inline: auto;
         z-index: 2;
+    }
+
+    .parameters{
+        display:grid; 
+        grid-template-columns: repeat(4, 75px); 
+        column-gap: 25px; 
+        margin-inline: auto;
+    }
+
+    .parameters input{
+        width: 75px;
     }
 }
