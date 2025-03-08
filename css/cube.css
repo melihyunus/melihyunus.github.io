@@ -98,3 +98,17 @@ transform: translateZ(calc(var(--cube-lenght) * 1.5));
     transform: translateZ(1px);
     border: solid 2px  black;
 }
+
+@media (min-width:1024px) /* tablet, landscape iPad, lo-res laptops ands desktops */
+{
+    :root{
+        --cube-lenght: 50px;
+    }
+    
+    .cube-container{
+        position: relative;
+        width: 200px;
+        margin-inline: auto;
+        z-index: 2;
+    }
+}
