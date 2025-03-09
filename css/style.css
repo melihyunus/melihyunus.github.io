@@ -1,0 +1,170 @@
+@font-face {
+    font-family: Poppins-light;
+    src: url("../fonts/Poppins/Poppins-Light.ttf");
+
+    
+    font-family: Digital;
+    src: url("../fonts/DS-DIGI.TTF");
+}
+
+:root{
+    --bgcolor : rgb(30, 31, 46);
+    --color : cornflowerblue;
+    --navcolor :  rgb(25, 25, 42);
+    --font : "Poppins-light";
+
+    --container-width : 1200px;
+    --banner-height: 350px;
+    --logo-width: 180px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    min-width: fit-content;
+}
+
+li{
+    list-style-type: none;
+}
+
+body{
+    background-color: var(--bgcolor);
+    color:var(--color);
+    font-family: --var(--font);
+}
+
+.container{
+    width: var(--container-width);
+    margin: auto;
+}
+
+.banner{
+    display: flex;
+    overflow: hidden;
+    background-color: rgb(21, 21, 21);
+    justify-content: center;
+    align-items:center;
+    min-height: var(--banner-height);
+}
+
+#matrix{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    opacity: 0.6;
+}
+
+.logo{
+    width: var(--logo-width);
+    aspect-ratio: 1/1;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-inline: auto;
+    background-image: url("../images/ben.jpg");
+    background-size: cover;
+}
+
+.motto{
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+.navbar{
+    background-color: var(--navcolor);
+}
+
+.nav{
+    height: calc(var(--container-width)/16);
+    min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10px;
+}
+
+.nav>.menu-icon{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    background-image: url("../images/menu.svg");
+    background-size: cover;
+    display: none;
+}
+
+.nav>ul{
+    display: flex;
+    align-items: end;
+    column-gap: 20px;
+    font-weight: bold;
+    background-color: var(--navcolor);
+}
+
+.nav>.socials {
+    display: flex;
+    align-items: end;
+    column-gap: 15px;
+    scale: 0.9;
+}
+
+.nav>.socials>img:hover{
+    transform: scale(1.2);
+    transition: 100ms;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown>button{
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown>button:focus~.drop-menu{
+    display: block;
+}
+
+.drop-menu:hover{
+    display: block;
+}
+
+.drop-menu{
+    position: absolute;
+    overflow: hidden;
+    top:30px;
+    left: 10px;
+    border-radius:10px;
+    background-color: var(--navcolor);
+    box-shadow: inset 1px 1px gray;
+    display: none;
+    z-index: 100;
+}
+
+.drop-item{
+    padding-block: 10px;
+    padding-inline: 20px;
+}
+
+.drop-item:nth-child(1){
+    padding-top: 20px;
+}
+
+.drop-item:nth-last-child(1){
+    padding-bottom: 20px;
+}
+
+.drop-item:hover{
+    background-color: rgb(240, 248, 255, 0.1);
+}
+

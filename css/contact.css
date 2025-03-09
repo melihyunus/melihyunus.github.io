@@ -1,0 +1,45 @@
+form{
+    width: 280px;
+    margin-top: 20px;
+    margin-inline:auto;
+}
+form>.contact-form{
+    margin-top:20px
+}
+.label{
+    margin-top: 10px;
+}
+input, textarea{
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 6px;
+    color:black;
+    width: 100%;
+}
+label{
+    padding: 10px;
+}
+input[type=submit]{
+    width: 100px;
+    height: 2em;
+    color: var(--color);
+    background-color: var(--bgcolor);
+    box-shadow: 1px 1px 3px;
+    font-size: 1.1em;
+    padding: 0;
+    margin-top: 10px;
+}
+
+@media (min-width:768px) /* iPads, Tablets */
+{
+    form{
+        width: 500px;
+    }
+    form>.contact-form{
+        display:grid;
+        grid-template-columns: 100px auto;
+        gap: 10px;
+        margin-inline:auto;
+        margin-top:20px
+    }
+}

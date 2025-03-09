@@ -1,0 +1,94 @@
+/* Extra large screens, TV */
+
+
+@media (max-width:1199px) /* Desktops, large screens */
+{
+    :root{
+        --container-width : 1024px;
+        --banner-height: 325px;
+        --logo-width: 170px;
+    }
+}
+
+@media (max-width:1023px) /* Small screens, laptops */
+{
+    :root{
+        --container-width : 768px;
+        --banner-height: 300px;
+        --logo-width: 160px;
+    }
+}
+
+@media (max-width:767px) /* iPads, Tablets */
+{
+    :root{
+        --container-width : 480px;
+        --banner-height: 280px;
+        --logo-width: 160px;
+    }
+    .banner{
+        font-size: 0.9em;
+    }
+
+    .nav>.menu-icon{
+        display: block;
+    }
+
+    .drop-menu, .nav>ul{
+        display: block;
+        overflow: hidden;
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0vw;
+        height: 90vh;
+        border-radius:10px 0 10px 0;
+        box-shadow: 1px 1px gray;
+        transition: width 500ms;
+        padding-top: 50px;
+        font-size: 1.1em;
+    }
+
+    .nav>ul>li{
+        padding-block: 10px;
+        padding-inline: 20px;
+    }
+    
+    .nav>ul>li:nth-child(1){
+        padding-top: 20px;
+    }
+    
+    .nav>ul>li:nth-last-child(1){
+        padding-bottom: 20px;
+    }
+    
+    .nav>ul>li:hover{
+        background-color: rgb(240, 248, 255, 0.1);
+    }
+
+    .nav>.menu-icon:focus~ul, 
+    .dropdown>button:focus~.drop-menu{
+        width: 60vw;
+    }
+    
+    .nav>ul:hover, .drop-menu:hover{
+        width: 60vw;;
+    }
+}
+
+@media (max-width:479px) /* Phones */
+{
+    :root{
+        --container-width : 320px;
+        --banner-height: 270px;
+        --logo-width: 155px;
+    }
+    .banner{
+        font-size: 0.8em;
+    }
+}
+
+
+
+

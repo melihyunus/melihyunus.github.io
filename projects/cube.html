@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melih Yunus</title>
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dimension.css">
+    <link rel="stylesheet" type="text/css" href="../css/cube.css">
+</head>
+<body>
+    <div class="banner">
+        <canvas id="matrix"></canvas>
+        <div>
+            <div class="logo"></div>
+            <p class="motto">"Procrastination is the worst evil enemy of humanity."</p>            
+        </div>
+    </div>
+    <div class="navbar">
+        <nav class="nav container">
+            <button class="menu-icon"></button>
+            <ul>
+                <li><a href="../index.html"><img src="../images/home.svg" width="20"/> HOME</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <button>Works</button>
+                    <div class="drop-menu">
+                        <div class="drop-item"><a href="./calc.html">Calculator</a></div>
+                        <div class="drop-item"><a href="./cube.html">3D Cube</a></div>                        
+                    </div>
+                </li>
+                <li><a href="../contact.html">Contact</a></li>      
+            </ul>
+            <div class="socials">
+                <img src="../images/github.svg" height="15" width="15"/>
+                <img src="../images/linkedin.svg" height="17" width="17"/>
+                <img src="../images/instagram.svg" height="18" width="18"/>
+                <img src="../images/mail.svg" height="17" width="17"/>
+            </div> 
+        </nav>
+    </div> 
+    <div class="container">
+        <div class="cube-container">
+            <div class="parameters">
+                <div class="title">Left</div>
+                <div class="title">Right</div>
+                <div class="title">RotateX</div>
+                <div class="title">RotateY</div>
+                <input id="X" type="number" size="3"/>
+                <input id="Y" type="number" size="3"/>
+                <input id="rX" type="number" size="3"/>
+                <input id="rY" type="number" size="3"/>
+            </div>
+            <div class="cube-base">
+                <div class="move"><img src="../images/move.svg" width="32"/></div>
+                <div class="cube" draggable="false">
+                    <div class="side front"><img src="../images/c-2.svg"></div>
+                    <div class="side back"><img src="../images/net.svg"></div>
+                    <div class="side left"><img src="../images/node.svg"></div>
+                    <div class="side right"><img src="../images/c-1.svg"></div>
+                    <div class="side top"><img src="../images/sql.svg"></div>
+                    <div class="side bottom"><img src="../images/html.svg"></div>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="../js/jquery.plate.js"></script>
+<script src="../js/matrixrain.js"></script>
+<script src="../js/cube.js"></script>
+<script>
+    $(".logo").plate();    
+</script>
+<script>
+    var matrixRain = new MatrixRain("15px Digital", 10);
+    matrixRain.columnWidth = 15;
+    matrixRain.charSpace = 15;
+    matrixRain.flowRate = 20;
+    matrixRain.randomColors = false;
+    matrixRain.backgroundColor = "transparent";
+    matrixRain.charList = ['0','1','2','3','4','5','6','7','8','9',
+			'A','B','C','D','E','F'];
+    matrixRain.textColor = "gray";
+</script>
+</html>
