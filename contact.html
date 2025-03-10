@@ -94,19 +94,6 @@
 
 	let init = {
             method:"POST",
-	    credentials:"include",
-            mode:"cors",
-            headers:
-            {
-                "Accept":"application/json, text/plain, */*",
-                "Content-type":"application/json",
-                "Authorization":"*",
-                "Access-Control-Allow-Credentials": "true",
-                "Access-Control-Request-Method": "*",
-                "Access-Control-Allow-Origin":"*",
-                "Access-Control-Allow-Headers":"Origin, Content-type, Accept, Authorization, Credentials"
-            },
-
             body:JSON.stringify(value)
         }
 
