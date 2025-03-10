@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melih Yunus</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/dimension.css">
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+    <div class="banner">
+        <canvas id="matrix"></canvas>
+        <div>
+            <div class="logo"></div>
+            <p class="motto">"Procrastination is the worst evil enemy of humanity."</p>            
+        </div>
+    </div>
+    <div class="navbar">
+        <nav class="nav container">
+            <button class="menu-icon"></button>
+            <ul>
+                <li><a href="./index.html"><img src="./images/home.svg" width="20"/> HOME</a></li>
+                <li><a href="./resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <button>Works</button>
+                    <div class="drop-menu">
+                        <div class="drop-item"><a href="./projects/calc.html">Calculator</a></div>
+                        <div class="drop-item"><a href="./projects/cube.html">3D Cube</a></div>                        
+                    </div>
+                </li>
+                <li><a href="./contact.html">Contact</a></li>      
+            </ul>
+            <div class="socials">
+                <a href="https://github.com/melihyunus"><img src="./images/github.svg" height="15" width="15"/></a> 
+                <a href="https://www.linkedin.com/in/melihyunusbulbul/"><img src="./images/linkedin.svg" height="17" width="17"/></a> 
+                <img src="./images/instagram.svg" height="18" width="18"/>
+                <a href="mailto:yunus@melihyunus.com.tr"><img src="./images/mail.svg" height="17" width="17"/></a> 
+            </div> 
+        </nav>
+    </div> 
+    <div class="container">
+        <form name="form" action="https://node.melihyunus.com.tr/contact" method="post" target="_self">
+            <h2 align="center">Contact Form</h2> 
+            <div class="mailBody">
+                <div class="label">Name</div> 
+                <input name="name" type="text" value = "" placeholder="Name">
+                <div class="label">Email</div> 
+                <input name="mail" type="text" value = "" placeholder="Email"/>
+                <div class="label">Subject</div> 
+                <input name="subject" type="text" value = "" placeholder="Subject"/>
+                <div class="label">Message</div> 
+                <textarea name="message" rows="8" placeholder="Your message"></textarea>  
+            </div>
+            <p align="right">
+                <input type="submit" value="Send">
+            </p> 
+        </form> 
+        
+        <div class="response" style="text-align:right">
+            <p></p>
+            <div>
+                <a href="./contact.html"><div class="button">Yeni Mesaj</div></a>
+                <a href="./index.html"><div class="button">Ana Sayfa</div></a>         
+            </div>
+        </div>
+        
+        <br/><br/>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="./js/jquery.plate.js"></script>
+<script src="./js/matrixrain.js"></script>
+<script>
+    $(".logo").plate();    
+</script>
+<script>
+    var matrixRain = new MatrixRain("15px Digital", 10);
+    matrixRain.columnWidth = 15;
+    matrixRain.charSpace = 15;
+    matrixRain.flowRate = 20;
+    matrixRain.randomColors = false;
+    matrixRain.backgroundColor = "transparent";
+    matrixRain.charList = ['0','1','2','3','4','5','6','7','8','9',
+			'A','B','C','D','E','F'];
+    matrixRain.textColor = "gray";
+
+    const mailform = document.querySelector("form");
+    mailform.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        const value = Object.fromEntries(data.entries());
+
+        fetch("https://node.melihyunus.com.tr/contact", {
+            method: "POST",
+            body: JSON.stringify(value),
+            headers: {
+            "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+        .then((response) => {
+            const res = document.querySelector(".response");
+            const resText = document.querySelector(".response>p");
+
+            e.target.style.display = "none";
+            res.style.display = "block";
+
+            if(response.ok) {
+                document.querySelector(".response>p").innerHTML = "<h3>Mesajınız gönderildi. En kısa süre içerisinde sizedönüş yapacağım.</h3>";
+            }
+            else {
+                resText.style.color = "red";
+                document.querySelector(".response>p").innerHTML = "Teknik bir aksaklık nedeniyle mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyiniz.";
+            }
+        });
+    })
+</script>
+</html>
