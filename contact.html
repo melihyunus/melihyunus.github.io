@@ -92,7 +92,7 @@
         const data = new FormData(e.target);
         const value = Object.fromEntries(data.entries());
 
-        fetch("node.melihyunus.com.tr/contact", {
+        fetch("https://node.melihyunus.com.tr/contact", {
             method: "POST",
             body: JSON.stringify(value),
             headers: {
