@@ -92,13 +92,25 @@
         const data = new FormData(e.target);
         const value = Object.fromEntries(data.entries());
 
-        fetch("https://node.melihyunus.com.tr/contact", {
-            method: "POST",
-            body: JSON.stringify(value),
-            headers: {
-            "Content-type": "application/json; charset=UTF-8"
-            }
-        })
+	let init = {
+            method:"POST",
+            credentials:"include",
+            mode:"cors",
+            headers:
+            {
+                "Accept":"application/json, text/plain, */*",
+                "Content-type":"application/json",
+                "Authorization":"*",
+                "Access-Control-Allow-Credentials": "true",
+                "Access-Control-Request-Method": "*",
+                "Access-Control-Allow-Origin":"*",
+                "Access-Control-Allow-Headers":"Origin, Content-type, Accept, Authorization, Credentials"
+            },
+
+            body:JSON.stringify(value)
+        }
+
+        fetch("https://node.melihyunus.com.tr/contact", init)
         .then((response) => {
             const res = document.querySelector(".response");
             const resText = document.querySelector(".response>p");
