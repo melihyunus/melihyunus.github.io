@@ -91,30 +91,24 @@
         e.preventDefault();
         const data = new FormData(e.target);
         const value = Object.fromEntries(data.entries());
-
-	let init = {
-            method:"POST",
-	    mode:  'no-cors',
-	    headers: {'Content-Type': 'application/json'},
-            body:JSON.stringify(value)
-        }
-
-        fetch("https://node.melihyunus.com.tr/contact", init)
-        .then((response) => {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("POST", "https://node.melihyunus.com.tr/contact", false); // false for synchronous request
+        xmlHttp.setRequestHeader("Content-type", "application/json");
+        xmlHttp.onreadystatechange = function() {
             const res = document.querySelector(".response");
             const resText = document.querySelector(".response>p");
 
             e.target.style.display = "none";
             res.style.display = "block";
 
-            if(response.ok) {
-                document.querySelector(".response>p").innerHTML = "<h3>Mesajınız gönderildi. En kısa süre içerisinde sizedönüş yapacağım.</h3>";
-            }
+            if (this.readyState == 4 && this.status == 200)
+                resText.innerHTML = "<h3>Mesajınız gönderildi. En kısa süre içerisinde sizedönüş yapacağım.</h3>";
             else {
                 resText.style.color = "red";
                 document.querySelector(".response>p").innerHTML = "Teknik bir aksaklık nedeniyle mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyiniz.";
             }
-        });
+        };
+        xmlHttp.send(JSON.stringify(value));
     })
 </script>
 </html>
