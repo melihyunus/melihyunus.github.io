@@ -85,8 +85,17 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="./js/jquery.plate.js"></script>
 <script src="./js/matrixrain.js"></script>
-<script>
-    $(".logo").plate();    
-</script>
 <script src="./js/contact.js"></script>
+<script>
+    $(".logo").plate();
+        var matrixRain = new MatrixRain("15px Digital", 10);
+    matrixRain.columnWidth = 15;
+    matrixRain.charSpace = 15;
+    matrixRain.flowRate = 20;
+    matrixRain.randomColors = false;
+    matrixRain.backgroundColor = "transparent";
+    matrixRain.charList = ['0','1','2','3','4','5','6','7','8','9',
+			'A','B','C','D','E','F'];
+    matrixRain.textColor = "gray";
+</script>
 </html>
