@@ -6,7 +6,7 @@ mailform.addEventListener("submit", (e) => {
     const value = Object.fromEntries(data.entries());
 
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", "/contact", false); // false for synchronous request
+    xmlHttp.open("POST", "https://node.melihyunus.com.tr/contact", false); // false for synchronous request
     xmlHttp.setRequestHeader("Content-type", "application/json");
     xmlHttp.onreadystatechange = function() {
         const res = document.querySelector(".response");
