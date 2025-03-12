@@ -34,6 +34,7 @@
     margin-left: calc(50% - var(--cube-lenght)) ;
     margin-top: calc(var(--cube-lenght) * 2) ;
     perspective: 5000px;
+    aspect-ratio: 2/3;
 }
 
 .cube{
@@ -98,13 +99,16 @@ transform: translateZ(calc(var(--cube-lenght) * 1.5));
     transform: translateZ(1px);
     border: solid 2px  black;
 }
+.footer{
+    position: fixed;
+    bottom:0;
+}
 
 @media (min-width:1024px) /* tablet, landscape iPad, lo-res laptops ands desktops */
 {
     :root{
         --cube-lenght: 100px;
     }
-
     .parameters{
         display:grid; 
         grid-template-columns: repeat(4, 60px); 

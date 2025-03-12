@@ -1,9 +1,11 @@
 h2{
     margin-left: 20px;
 }
+
 .content{
     margin-top: 20px;
 }
+
 .education{
     display: grid;
     grid-template-columns: 3em auto;
@@ -11,10 +13,12 @@ h2{
     margin-block: 30px;
     gap:0;
 }
+
 .education>.first{
     height: 100%;
     position: relative;
 }
+
 .education>.first::before{
     position:absolute;
     content: "";
@@ -24,6 +28,7 @@ h2{
     left: 4px;
     top: 10px;
 }
+
 .education>.first::after{
     position:absolute;
     content: "";
@@ -35,23 +40,28 @@ h2{
     border: solid 5px var(--maincolor);
     top: 10px;
 }
+
 .education-card{
     margin-bottom: 20px;
 }
+
 .card-title{
     font-size: 1.1em;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .card-date{
     font-size: 1.1em;
     color:burlywood;
 }
+
 .skillcard{
     border-radius: 10px;
     box-shadow: inset 1px 1px 1px gray;
     padding: 20px;
 }
+
 .skill{
     width: 100%;
     background-color: gray;
@@ -59,6 +69,7 @@ h2{
     overflow: hidden;
     margin-bottom: 10px;
 }
+
 .skill div{
     height: 5px;
     background-color: rgb(216, 141, 0);
