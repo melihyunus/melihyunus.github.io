@@ -1,0 +1,98 @@
+.content{
+    width: 500px;
+    margin-inline: auto;
+    h2{
+        margin-inline: auto;
+        margin-top: 2em;
+    }
+    form{
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 10px;
+        margin-top: 2em;
+        &>div{
+            display: flex;
+            span{
+                margin-left: 5px;
+                margin-block: 10px;
+                color:red;
+            }
+        }
+        input:not([type="submit"]), textarea{
+            width: calc(100% - 20px);
+            padding: 10px;
+            border-radius: 5px;
+            background-color:lightsteelblue;
+            &::placeholder{
+                opacity: 0;
+            }
+        }
+        input[type="submit"]{
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: var(--color);
+            font: var(--font);
+        }
+        &>div:nth-last-child(1){
+            display: flex;
+            justify-content: end;
+            grid-column: span 2;
+        }
+        label{
+            padding: 10px;
+        }
+        .statusMessage{
+            margin-inline: auto;
+            margin-block: 10px;
+            text-align: center;
+        }
+    }
+}
+
+.navbar>nav>ul>li:nth-child(5){
+    pointer-events: none;
+    opacity: 0.6;
+    &::after{
+        display: block;
+    }
+}
+
+@media (max-width:1023px) /* Small screens, laptops */
+{
+
+}
+
+@media (max-width:767px) /* iPads, Tablets */
+{
+    .content{
+        width: 400px;
+
+        form{
+            display: block;
+
+            label{
+                display: none;
+            }
+            input:not([type="submit"]), textarea{
+                margin-block: 7px;
+                &::placeholder{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .navbar>nav>ul>li:nth-child(5){
+        &::after{
+            display: none;
+        }
+    }
+}
+
+@media (max-width:479px) /* Phones */
+{
+    .content{
+        width: 300px;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="personal website">
+    <meta name="keywords" content="software engineer, computer engineer, melih yunus bulbul, HTML, CSS, JavaScript, C++">
+    <meta name="author" content="Melih Yunus Bülbül">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melih Yunus</title>
+    <link rel="stylesheet" type="text/CSS" href="../css/style.css">
+    <link rel="stylesheet" type="text/CSS" href="../css/devices.css">
+    <link rel="stylesheet" type="text/CSS" href="../css/works.css">
+    <link rel="stylesheet" type="text/CSS" href="../css/calc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="banner">
+        <canvas id="matrix"></canvas>
+        <div>
+            <div class="logo"></div>
+            <p class="motto">"Procrastination is the worst evil enemy of humanity."</p>            
+        </div>
+    </div>
+    <div class="navbar">
+        <nav class="container">
+            <button class="fa fa-bars"></button>
+            <ul>
+                <i class="fa fa-home"></i>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./resume.html">Resume</a></li>
+                <li>
+                    <button>Works</button>
+                    <ul>
+                        <li><a href="https://node.melihyunus.com.tr">My Express Site</a></li>
+                        <li class="calculator"><a href="./projects/calc">Calculator</a></li>
+                        <li class="cube3d"><a href="./projects/cube">3D Cube</a></li>                        
+                    </ul>
+                </li>
+                <li><a href="./contact.html">Contact</a></li>      
+            </ul>
+            <div>
+                <a href="https://github.com/melihyunus"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/melihyunusbulbul/"><i class="fa fa-linkedin"></i></a> 
+                <i class="fa fa-instagram"></i>
+                <a href="mailto:yunus@melihyunus.com.tr"><i class="fa fa-envelope-o"></i></a> 
+            </div> 
+        </nav>
+    </div>
+    <div class="container">
+        <br/>
+        <div class="calc">
+            <div class="screen">
+                <div id="operation">0</div>
+                <div id="number">0</div>
+            </div>
+            <div class="buttons">
+                <button class="CE" value = "CE">CE</button>
+                <button class="C" value = "C">C</button>
+                <button class="operator" value = "/">/</button>
+                <button class="operator" value = "*">*</button>
+                <button class="number" value = "1">1</button>
+                <button class="number" value = "2">2</button>
+                <button class="number" value = "3">3</button>
+                <button class="operator" value = "-">-</button>
+                <button class="number" value = "4">4</button>
+                <button class="number" value = "5">5</button>
+                <button class="number" value = "6">6</button>
+                <button class="operator" value = "+">+</button>
+                <button class="number" value = "7">7</button>
+                <button class="number" value = "8">8</button>
+                <button class="number" value = "9">9</button>
+                <button class="eval" value = "=" style="grid-row: span 2; height: 65px;">=</button>
+                <button id="neg" value = ""><span><sup>+</sup>/ -</span></button>
+                <button class="number" value = "0">0</button>
+                <button class="decimal" value = ".">.</button>
+            </div>
+        </div>  
+    </div>
+    <div class="footer container">© 2025 Melih Yunus Bülbül</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="../js/jquery.plate.js"></script>
+<script src="../js/matrixrain.js"></script>
+<script src="../js/calc.js"></script>
+<script>
+    $(".logo").plate();    
+</script>
+<script>
+    var matrixRain = new MatrixRain("15px Digital", 10);
+    matrixRain.columnWidth = 15;
+    matrixRain.charSpace = 15;
+    matrixRain.flowRate = 20;
+    matrixRain.randomColors = false;
+    matrixRain.backgroundColor = "transparent";
+    matrixRain.charList = ['0','1','2','3','4','5','6','7','8','9',
+			'A','B','C','D','E','F'];
+    matrixRain.textColor = "gray";
+</script>
+</html>

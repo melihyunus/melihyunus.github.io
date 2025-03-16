@@ -1,0 +1,117 @@
+.content{
+    display:grid; 
+    grid-template-columns: 3fr 2fr; 
+    border-radius: 10px; 
+    margin-inline: auto;
+
+    &>div{
+        margin-left:20px;
+        &>.me{
+            display: flex;
+            align-items: center;
+            width:fit-content;
+            height: 35px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: gainsboro;
+            border-radius: 5px;
+            margin-top: 2.5em;
+            padding-inline: 10px;
+            font-family: Arial;
+    
+            &>div{
+                font-weight: bolder;
+                font-size: 1.4em;
+                color: var(--color);
+                transform: rotateZ(90deg);
+                margin-left: 15px;        
+            }
+        }
+        &>.note{
+            margin-top: 3em;
+            font-size: 0.9em;
+            color:gray;
+        }
+        &>.title{
+            font-size: 2em;
+            color:gainsboro;
+            margin-top: 1em;
+            font-family: "Arial";
+            &>span{
+                color:var(--color);
+            }    
+        }
+    }
+
+    &>.back-img{
+        background-image: url("../images/bilgibasinda.png");
+        background-size: 80%;
+        aspect-ratio: 5/4;
+        background-position: top right;
+        background-repeat: no-repeat;
+        opacity: 1;
+        margin-right: 20px;
+    }
+
+}
+
+.navbar>nav>ul>li:nth-child(2){
+    pointer-events: none;
+    opacity: 0.6;
+    &::after{
+        display: block;
+    }
+}
+
+/* Extra large screens, TV */
+@media (max-width:1199px) /* Desktops, large screens */
+{
+
+}
+
+@media (max-width:1023px) /* Small screens, laptops */
+{
+    .content{
+        position: relative;
+        display: block;
+
+        &>div>.note{
+            color:lightgray;
+        }
+        .back-img{
+            position: absolute;
+            top: -80px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0.2;
+            margin-right: 0px;
+            z-index: -1;
+        }
+    }
+}
+
+@media (max-width:767px) /* iPads, Tablets */
+{
+    .content>div>.title{
+        font-size: 1.5em;
+        .back-img{
+            background-size: contain;
+        }
+    }
+    .content .back-img{
+        top: -30px;
+    }
+    .navbar>nav>ul>li:nth-child(2){
+        &::after{
+            display: none;
+        }
+    }
+}
+
+@media (max-width:479px) /* Phones */
+{
+    .content .back-img{
+        top: 0;
+    }
+}
+
