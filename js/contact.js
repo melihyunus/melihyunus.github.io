@@ -15,7 +15,7 @@ mailform.addEventListener("submit", (e) => {
         if(this.readyState === XMLHttpRequest.DONE){
             if (this.status == 200){
                 reset();
-                e.target.querySelector(".statusMessage").style.color = "var(--color)";
+                e.target.querySelector(".statusMessage").style.color = "aquamarine";
                 e.target.querySelector(".statusMessage").innerHTML = "Mesajınız gönderildi.";
             }
             else {
