@@ -19,14 +19,9 @@ mailform.addEventListener("submit", (e) => {
                 e.target.querySelector(".statusMessage").innerHTML = "Mesajınız gönderildi.";
             }
             else {
-                var errList = JSON.parse(this.responseText);
-                errors(errList);
-                e.target.querySelector(".statusMessage").style.color = "red";
-                
-                if(this.status == 400) {
-                    e.target.querySelector(".statusMessage").innerHTML = "Lütfen formdaki alanşları uygun şekilde doldurunuz.";
-                }
-                else {
+                errors(JSON.parse(this.responseText));
+                if(this.status != 400) {
+                    e.target.querySelector(".statusMessage").style.color = "red";
                     e.target.querySelector(".statusMessage").innerHTML = "Teknik bir aksaklık nedeniyle mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyiniz.";
                 }
             }           
@@ -55,6 +50,8 @@ function errors(errList){
             document.querySelector(".field[name='" + el.name + "']~span").innerHTML = "";
         }
     });
+    document.querySelector(".statusMessage").style.color = "red";
+    document.querySelector(".statusMessage").innerHTML = "Lütfen formdaki alanşları uygun şekilde doldurunuz.";
 }
 
 function reset(){
@@ -63,4 +60,13 @@ function reset(){
 
             el.innerHTML = "";
     });
+}
+
+function mailControl(mail){
+    const errlist = [];
+    if(mail.name === "" || mail.name.length < 3) errlist.push("name");
+    if(mail.mail === "" || mail.mail.length < 3) errlist.push("mail");
+    if(mail.subject === "" || mail.subject.length < 3) errlist.push("subject");
+    if(mail.message === "" || mail.message.length < 3) errlist.push("message");
+    return errlist;
 }
